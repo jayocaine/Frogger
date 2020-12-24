@@ -57,8 +57,6 @@ public class Player : MonoBehaviour
     Vector3 startPosition;
     #endregion
 
-
-
     #region -- Unity Event Handlers --
     /// <summary>
     /// Unity event handler
@@ -69,7 +67,6 @@ public class Player : MonoBehaviour
     }
     #endregion
 
-
     #region -- PlayerMovement Event Handler --
     /// <summary>
     /// PlayerMovement Event Handler
@@ -79,7 +76,6 @@ public class Player : MonoBehaviour
     }
 
     #endregion
-
 
     #region -- Private Animations --
 
@@ -117,6 +113,5 @@ public class Player : MonoBehaviour
         reset.Invoke();
     }
     #endregion
-
 
 }
