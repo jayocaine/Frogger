@@ -2187,7 +2187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1407184642}
-  playerMesh: {fileID: 1758498780}
+  playerMesh: {fileID: 1000255466}
   lives: 3
   deathInterval: 2
   dead:
@@ -2221,7 +2221,7 @@ Transform:
   m_LocalPosition: {x: -0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1758498780}
+  - {fileID: 1000255466}
   - {fileID: 1407184639}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -2477,6 +2477,54 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992700346}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1000255465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1000255466}
+  - component: {fileID: 1000255467}
+  m_Layer: 0
+  m_Name: Penguin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1000255466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000255465}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1758498780}
+  m_Father: {fileID: 920573816}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1000255467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000255465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1b560566c02e1429b94307496bf1bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  follow: {fileID: 1407184639}
+  speed: 5
+  walkingAnimatorParameter: isRunning
+  animator: {fileID: 1758498779}
 --- !u!1 &1032548354
 GameObject:
   m_ObjectHideFlags: 0
@@ -3817,12 +3865,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726658962}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1758498778 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 490765378428470923, guid: 692f31fa4060eb941b6ad90e281c102b,
-    type: 3}
-  m_PrefabInstance: {fileID: 490765377132559808}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1758498779 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 490765378438001927, guid: 692f31fa4060eb941b6ad90e281c102b,
@@ -3835,22 +3877,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 490765377132559808}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1758498781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1758498778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a1b560566c02e1429b94307496bf1bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  follow: {fileID: 1407184639}
-  speed: 5
-  walkingAnimatorParameter: isRunning
-  animator: {fileID: 1758498779}
 --- !u!1 &1778036914
 GameObject:
   m_ObjectHideFlags: 0
@@ -4622,7 +4648,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 920573816}
+    m_TransformParent: {fileID: 1000255466}
     m_Modifications:
     - target: {fileID: 490765378428470923, guid: 692f31fa4060eb941b6ad90e281c102b,
         type: 3}
@@ -4657,7 +4683,7 @@ PrefabInstance:
     - target: {fileID: 490765378428705451, guid: 692f31fa4060eb941b6ad90e281c102b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 490765378428705451, guid: 692f31fa4060eb941b6ad90e281c102b,
         type: 3}
