@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DriveWalkingAnimation : MonoBehaviour
+public class DriveAnimatorBoolFromMovement : MonoBehaviour
 {
     Vector3 lastPosition;
     public string walkingAnimatorParameter = "isWalking";
@@ -16,6 +16,7 @@ public class DriveWalkingAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         bool wasMoving = isMoving;
 
         isMoving = Vector3.Distance(transform.position, lastPosition) > 0.001f;
