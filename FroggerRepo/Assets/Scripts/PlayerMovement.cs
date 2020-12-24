@@ -6,10 +6,6 @@ using UnityEngine.Events;
 public class PlayerMovement : MonoBehaviour
 {
     public UnityEvent fall;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -47,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 //died
                 fall.Invoke();
-                print("dead ");
             }
         }
     }
