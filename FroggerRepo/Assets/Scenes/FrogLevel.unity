@@ -2186,42 +2186,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40c48d3e04da114a89ee1a55ebec015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameover:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 196909546}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   playerMovement: {fileID: 1407184642}
-  startPosition: {x: 0, y: 0, z: 0}
+  playerMesh: {fileID: 1758498780}
   lives: 3
   deathInterval: 2
   dead:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1407184638}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   reset:
     m_PersistentCalls:
+      m_Calls: []
+  gameover:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1407184638}
+      - m_Target: {fileID: 196909546}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -3045,7 +3023,7 @@ MonoBehaviour:
   fall:
     m_PersistentCalls:
       m_Calls: []
-  interval: 0.33
+  interval: 0.15
 --- !u!1 &1431933050
 GameObject:
   m_ObjectHideFlags: 0
