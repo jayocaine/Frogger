@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
@@ -20,10 +18,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if ( Time.time < nextInputTime) {
             return;
-        }
+        }        
         
-
-
         Vector3 oldPosition = transform.localPosition; //determine previous position after moving
                
         if (Input.GetKeyDown(KeyCode.UpArrow))
