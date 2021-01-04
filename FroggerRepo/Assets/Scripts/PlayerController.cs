@@ -80,5 +80,18 @@ public class PlayerController : MonoBehaviour
 
     private void ReleaseTheAnimation() {
         animationInProgress = false;
+
+        if (Input.GetKey(KeyCode.LeftArrow)) {
+            commandBuffer = Directions.Left;
+        }
+        if (Input.GetKey(KeyCode.RightArrow)) {
+            commandBuffer = Directions.Right;
+        }
+        if (Input.GetKey(KeyCode.UpArrow)) {
+            commandBuffer = Directions.Up;
+        }
+        if (Input.GetKey(KeyCode.DownArrow)) {
+            commandBuffer = Directions.Down;
+        }
     }
 }
