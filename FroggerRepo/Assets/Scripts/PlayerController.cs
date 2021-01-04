@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
         if (commandBuffer == Directions.Nothing) {
             return;
         }
-        
+
         switch (commandBuffer)
         {
             case Directions.Left:
