@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
         {
             case Directions.Left:
                 transform.rotation = Quaternion.Euler(0, -90, 0);
+                
                 break;
             case Directions.Right:
                 transform.rotation = Quaternion.Euler(0, 90, 0);
@@ -72,6 +73,7 @@ public class PlayerController : MonoBehaviour
 
                 break;         
         }
+        animationInProgress = true;
         commandBuffer = Directions.Nothing;
         anim.SetTrigger(animationTriggerName);
     }
