@@ -1,0 +1,29 @@
+To do List
+--------------------------------------------------------------------------------------
+Add ConstantMotion script []
+Teleport component []
+Detect when player is overtop of a log [x x ]
+Collectables, coins, keys  []
+--------------------------------------------------------------------------------------
+UI:
+
+Game over Screen []
+
+level Cleared []
+-timer tells you how long it took you
+-how many coins you collected
+
+star wipe []
+--------------------------------------------------------------------------------------
+Game logic:
+
+universal timer - runs events at certain intervals[]
+- number of times
+- at a certain interval
+
+Level Cleared after collection of Xnumber keys []
+
+--------------------------------------------------------------------------------------
+Aesthetics:
+
+play with pp (post processing) []
