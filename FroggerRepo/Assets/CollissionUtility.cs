@@ -17,7 +17,20 @@ public static class CollissionUtility {
     /// <param name="p">The point to check</param>
     /// <param name="layerMask">The layer mask to check, default is all layers.</param>
     /// <returns>Whether the point is inside another collider or not</returns>
-    public static bool PointCollidesWithWorld(Vector3 p, int layerMask = ~0 ) {
-        return Physics.OverlapSphereNonAlloc(p, 0,results) > 0;
+    public static bool PointCollidesWithWorld(Vector3 p, int layerMask = ~0) {
+        return Physics.OverlapSphereNonAlloc(p, 0, results, layerMask) > 0;
+    }
+
+    /// <summary>
+    /// Return the transform with a collider attached at the point specified
+    /// </summary>
+    /// <param name="p"></param>
+    /// <param name="layerMask"></param>
+    /// <returns></returns>
+    public static Transform TransformAtPoint(Vector3 p, int layerMask = ~0) {
+        if (Physics.OverlapSphereNonAlloc(p, 0, results, layerMask) > 0) {
+            return results[0].transform;
+        }
+        return null;
     }
 }
