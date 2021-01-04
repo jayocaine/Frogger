@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     /// Player Movement script
     /// </summary>
     public PlayerMovement playerMovement;
+    public Collectable collectableClass;
 
     /// <summary>
     /// The player mesh
@@ -55,6 +56,7 @@ public class Player : MonoBehaviour
     /// Keep track of the start position of the player movement controller
     /// </summary>
     Vector3 startPosition;
+    float itemsCollected;
     #endregion
 
     #region -- Unity Event Handlers --
@@ -63,7 +65,9 @@ public class Player : MonoBehaviour
     /// </summary>
     private void Awake() {
         playerMovement.fall.AddListener(OnFall);
+        collectableClass.collect.AddListener(onCollect);
         startPosition = playerMovement.transform.position;
+        itemsCollected = 0;
     }
     #endregion
 
@@ -73,6 +77,10 @@ public class Player : MonoBehaviour
     /// </summary>
     private void OnFall() {
         StartCoroutine(OnFailCoroutine());
+    }
+    private void onCollect() {
+        itemsCollected++;
+        print("Collected");
     }
 
     #endregion
