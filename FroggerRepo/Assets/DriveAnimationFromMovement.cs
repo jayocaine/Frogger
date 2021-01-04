@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DriveAnimatorBoolFromMovement : MonoBehaviour
+public class DriveAnimationFromMovement : MonoBehaviour
 {
     Vector3 lastPosition;
     public string walkingAnimatorParameter = "isWalking";
