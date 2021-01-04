@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
@@ -100,31 +101,35 @@ public class PlayerController : MonoBehaviour
     }
 
     private void ReleaseTheAnimation() {
+        StartCoroutine(ReleaseTheAnimationCoroutine());
+    }
+    private IEnumerator ReleaseTheAnimationCoroutine() {
+
+        //We must wait until root motion is applied to check our new position
+        yield return new WaitForEndOfFrame();
         animationInProgress = false;
-
-
 
         //check what we're standing on      
         transform.parent = CollissionUtility.TransformAtPoint(transform.position + Vector3.down, floorLayerMask);
         if (transform.parent == null) {
             //dead
             deathFromFall.Invoke();
-            return;
-        }
 
-        //Check if button is being held
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            commandBuffer = Directions.Left;
-        }
-        if (Input.GetKey(KeyCode.RightArrow)) {
-            commandBuffer = Directions.Right;
-        }
-        if (Input.GetKey(KeyCode.UpArrow)) {
-            commandBuffer = Directions.Up;
-        }
-        if (Input.GetKey(KeyCode.DownArrow)) {
-            commandBuffer = Directions.Down;
-        }
+        } else {
 
+            //Check if button is being held
+            if (Input.GetKey(KeyCode.LeftArrow)) {
+                commandBuffer = Directions.Left;
+            }
+            if (Input.GetKey(KeyCode.RightArrow)) {
+                commandBuffer = Directions.Right;
+            }
+            if (Input.GetKey(KeyCode.UpArrow)) {
+                commandBuffer = Directions.Up;
+            }
+            if (Input.GetKey(KeyCode.DownArrow)) {
+                commandBuffer = Directions.Down;
+            }
+        }
     }
 }
