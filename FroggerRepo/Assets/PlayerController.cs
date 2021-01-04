@@ -9,10 +9,13 @@ public class PlayerController : MonoBehaviour
         Up,
         Down,
     }
+
+    public string animationTriggerName = "Move";
     private Directions commandBuffer = Directions.Nothing;
     private bool animationInProgress = false;
     
     public Animator anim;
+    
 
   
     private void Update()
@@ -44,31 +47,35 @@ public class PlayerController : MonoBehaviour
             return;
         }
         //start the animation
-        switch (commandBuffer) {
-            case Directions.Nothing:
-                break;
+        if (commandBuffer == Directions.Nothing) {
+            return;
+        }
+        //rotate obj
+
+        //set trigger
+
+        switch (commandBuffer)
+        {
             case Directions.Left:
-                anim.SetTrigger("Left");
-                animationInProgress = true;
-                commandBuffer = Directions.Nothing;
+                transform.rotation = Quaternion.Euler(0, -90, 0);
                 break;
             case Directions.Right:
-                anim.SetTrigger("Right");
-                animationInProgress = true;
-                commandBuffer = Directions.Nothing;
+                transform.rotation = Quaternion.Euler(0, 90, 0);
+
                 break;
             case Directions.Up:
-                anim.SetTrigger("Up");
-                animationInProgress = true;
-                commandBuffer = Directions.Nothing;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+
                 break;
             case Directions.Down:
-                anim.SetTrigger("Down");
-                animationInProgress = true;
-                commandBuffer = Directions.Nothing;
-                break;
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+
+                break;         
         }
+        commandBuffer = Directions.Nothing;
+        anim.SetTrigger(animationTriggerName);
     }
+
     private void ReleaseTheAnimation() {
         animationInProgress = false;
     }
