@@ -18,6 +18,6 @@ public static class CollissionUtility {
     /// <param name="layerMask">The layer mask to check, default is all layers.</param>
     /// <returns>Whether the point is inside another collider or not</returns>
     public static bool PointCollidesWithWorld(Vector3 p, int layerMask = ~0 ) {
-        return Physics.OverlapSphereNonAlloc(Vector3.zero, 0,results, layerMask) > 0;
+        return Physics.OverlapSphereNonAlloc(p, 0,results) > 0;
     }
 }
